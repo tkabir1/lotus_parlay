@@ -1,0 +1,136 @@
+cc_library(
+  name = "alloc",
+  hdrs = ["alloc.h"],
+  deps = [
+  "//parlaylib/include/parlay/internal:concurrent_stack",
+  "//parlaylib/include/parlay/internal:memory_size",
+  "//parlaylib/include/parlay/internal:block_allocator"
+  ],
+)
+
+cc_library(
+  name = "delayed_sequence",
+  hdrs = ["delayed_sequence.h"],
+)
+
+cc_library(
+  name = "hash_table",
+  hdrs = ["hash_table.h"],
+  deps = [
+    ":delayed_sequence",
+    ":monoid",
+    ":parallel",
+    ":sequence",
+    ":slice",
+    ":utilities",
+    "//parlaylib/include/parlay/internal:sequence_ops"
+  ],
+)
+
+cc_library(
+  name = "io",
+  hdrs = ["io.h"],
+  deps = [
+    ":primitives",
+    ":sequence",
+    ":slice",
+  ],
+)
+
+cc_library(
+  name = "monoid",
+  hdrs = ["monoid.h"],
+)
+
+cc_library(
+  name = "parallel",
+  hdrs = ["parallel.h"],
+)
+
+cc_library(
+  name = "primitives",
+  hdrs = ["primitives.h"],
+  deps = [
+    ":delayed_sequence",
+    ":monoid",
+    ":parallel",
+    ":range",
+    ":sequence",
+    ":slice",
+    ":utilities",
+    "//parlaylib/include/parlay/internal:collect_reduce",
+    "//parlaylib/include/parlay/internal:integer_sort",
+    "//parlaylib/include/parlay/internal:merge",
+    "//parlaylib/include/parlay/internal:merge_sort",
+    "//parlaylib/include/parlay/internal:sequence_ops",
+    "//parlaylib/include/parlay/internal:sample_sort",
+  ],
+)
+
+cc_library(
+  name = "random",
+  hdrs = ["random.h"],
+  deps = [
+    ":delayed_sequence",
+    ":parallel",
+    ":range",
+    ":sequence",
+    ":slice",
+    ":utilities",
+    "//parlaylib/include/parlay/internal:counting_sort",
+  ],
+)
+
+cc_library(
+  name = "range",
+  hdrs = ["range.h"],
+)
+
+cc_library(
+  name = "scheduler",
+  hdrs = ["scheduler.h"],
+  deps = [
+    "//parlaylib/include/parlay/internal:work_stealing_job"
+  ],
+)
+
+cc_library(
+  name = "sequence",
+  hdrs = ["sequence.h"],
+  deps = [
+    ":alloc",
+    ":parallel",
+    ":range",
+    ":slice",
+    ":type_traits",
+    ":utilities",
+    "//parlaylib/include/parlay/internal:debug_uninitialized"
+  ],
+)
+
+cc_library(
+  name = "slice",
+  hdrs = ["slice.h"],
+  deps = [
+    ":range",
+  ],
+)
+
+cc_library(
+  name = "type_traits",
+  hdrs = ["type_traits.hh"],
+)
+
+cc_library(
+  name = "utilities",
+  hdrs = ["utilities.hh"],
+  deps = [
+    ":parallel",
+    ":type_traits",
+    "//parlaylib/include/parlay/internal:debug_uninitialized"
+  ],
+)
+
+package(
+  default_visibility = ["//visibility:public"],
+)
