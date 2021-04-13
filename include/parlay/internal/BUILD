@@ -124,11 +124,22 @@ cc_library(
 )
 
 cc_library(
+  name = "sequence_base",
+  hdrs = ["sequence_base.h"],
+  deps = [
+    "//parlaylib/include/parlay:parallel",
+    "//parlaylib/include/parlay:type_traits",
+    "//parlaylib/include/parlay:utilities",
+  ],
+)
+
+cc_library(
   name = "sequence_ops",
   hdrs = ["sequence_ops.h"],
   deps = [
     "//parlaylib/include/parlay:delayed_sequence",
     "//parlaylib/include/parlay:monoid",
+    "//parlaylib/include/parlay:range",
     "//parlaylib/include/parlay:sequence",
     "//parlaylib/include/parlay:utilities",
   ],

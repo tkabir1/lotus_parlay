@@ -105,6 +105,7 @@ cc_library(
     ":type_traits",
     ":utilities",
     "//parlaylib/include/parlay/internal:debug_uninitialized"
+    "//parlaylib/include/parlay/internal:sequence_base"
   ],
 )
 
