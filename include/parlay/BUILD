@@ -34,6 +34,7 @@ cc_library(
     ":primitives",
     ":sequence",
     ":slice",
+    "//parlaylib/include/parlay/internal:file_map"
   ],
 )
 
@@ -45,6 +46,9 @@ cc_library(
 cc_library(
   name = "parallel",
   hdrs = ["parallel.h"],
+  deps = [
+    ":scheduler",
+  ],
 )
 
 cc_library(
