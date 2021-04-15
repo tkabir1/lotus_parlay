@@ -124,7 +124,7 @@ cc_library(
 
 cc_library(
   name = "utilities",
-  hdrs = ["utilities.hh"],
+  hdrs = ["utilities.h"],
   deps = [
     ":parallel",
     ":type_traits",
