@@ -119,7 +119,7 @@ cc_library(
 
 cc_library(
   name = "type_traits",
-  hdrs = ["type_traits.hh"],
+  hdrs = ["type_traits.h"],
 )
 
 cc_library(
