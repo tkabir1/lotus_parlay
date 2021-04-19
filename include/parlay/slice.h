@@ -65,6 +65,7 @@ struct slice {
   using reference = typename std::iterator_traits<It>::reference;
   
   using iterator = It;
+  using const_iterator = It;
   using sentinel = S;
   
   slice(iterator s, sentinel e) : s(s), e(e){};
