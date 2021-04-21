@@ -9,7 +9,7 @@ cc_library(
   deps = [
     ":concurrent_stack",
     ":memory_size",
-    "//parlaylib/include/parlay:utilities",
+    "//parlay:utilities",
   ],
 )
 
@@ -17,7 +17,7 @@ cc_library(
   name = "bucket_sort",
   hdrs = ["bucket_sort.h"],
   deps = [
-    "//parlaylib/include/parlay:utilities",
+    "//parlay:utilities",
   ],
 )
 
@@ -25,7 +25,7 @@ cc_library(
   name = "collect_reduce",
   hdrs = ["collect_reduce.h"],
   deps = [
-    "//parlaylib/include/parlay:utilities",
+    "//parlay:utilities",
   ],
 )
 
@@ -33,7 +33,7 @@ cc_library(
   name = "concurrent_stack",
   hdrs = ["concurrent_stack.h"],
   deps = [
-    "//parlaylib/include/parlay:utilities",
+    "//parlay:utilities",
   ],
 )
 
@@ -43,7 +43,7 @@ cc_library(
   deps = [
     ":sequence_ops",
     ":transpose",
-    "//parlaylib/include/parlay:utilities",
+    "//parlay:utilities",
   ],
 )
 
@@ -56,8 +56,8 @@ cc_library(
   name = "file_map",
   hdrs = ["file_map.h"],
   deps = [
-    "//parlaylib/include/parlay/internal/posix:file_map_impl_posix",
-    "//parlaylib/include/parlay/internal/windows:file_map_impl_windows",
+    "//parlay/internal/posix:file_map_impl_posix",
+    "//parlay/internal/windows:file_map_impl_windows",
   ],
 )
 
@@ -69,9 +69,9 @@ cc_library(
     ":sequence_ops",
     ":quicksort",
     ":uninitialized_sequence",
-    "//parlaylib/include/parlay:delayed_sequence",
-    "//parlaylib/include/parlay:slice",
-    "//parlaylib/include/parlay:utilities",
+    "//parlay:delayed_sequence",
+    "//parlay:slice",
+    "//parlay:utilities",
   ],
 )
 
@@ -84,8 +84,8 @@ cc_library(
   name = "merge",
   hdrs = ["merge.h"],
   deps = [
-    "//parlaylib/include/parlay:sequence",
-    "//parlaylib/include/parlay:utilities",
+    "//parlay:sequence",
+    "//parlay:utilities",
   ],
 )
 
@@ -95,8 +95,8 @@ cc_library(
   deps = [
     ":merge",
     ":quicksort",
-    "//parlaylib/include/parlay:sequence",
-    "//parlaylib/include/parlay:utilities",
+    "//parlay:sequence",
+    "//parlay:utilities",
   ],
 )
 
@@ -107,7 +107,7 @@ cc_library(
     ":uninitialized_storage",
     ":uninitialized_sequence",
     ":sequence_ops",
-    "//parlaylib/include/parlay:utilities",
+    "//parlay:utilities",
   ],
 )
 
@@ -119,7 +119,7 @@ cc_library(
     ":quicksort",
     ":sequence_ops",
     ":transpose",
-    "//parlaylib/include/parlay:utilities",
+    "//parlay:utilities",
   ],
 )
 
@@ -127,9 +127,9 @@ cc_library(
   name = "sequence_base",
   hdrs = ["sequence_base.h"],
   deps = [
-    "//parlaylib/include/parlay:parallel",
-    "//parlaylib/include/parlay:type_traits",
-    "//parlaylib/include/parlay:utilities",
+    "//parlay:parallel",
+    "//parlay:type_traits",
+    "//parlay:utilities",
   ],
 )
 
@@ -137,11 +137,11 @@ cc_library(
   name = "sequence_ops",
   hdrs = ["sequence_ops.h"],
   deps = [
-    "//parlaylib/include/parlay:delayed_sequence",
-    "//parlaylib/include/parlay:monoid",
-    "//parlaylib/include/parlay:range",
-    "//parlaylib/include/parlay:sequence",
-    "//parlaylib/include/parlay:utilities",
+    "//parlay:delayed_sequence",
+    "//parlay:monoid",
+    "//parlay:range",
+    "//parlay:sequence",
+    "//parlay:utilities",
   ],
 )
 
@@ -149,7 +149,7 @@ cc_library(
   name = "transpose",
   hdrs = ["transpose.h"],
   deps = [
-    "//parlaylib/include/parlay:utilities",
+    "//parlay:utilities",
   ],
 )
 

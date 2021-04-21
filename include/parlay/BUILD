@@ -2,9 +2,9 @@ cc_library(
   name = "alloc",
   hdrs = ["alloc.h"],
   deps = [
-  "//parlaylib/include/parlay/internal:concurrent_stack",
-  "//parlaylib/include/parlay/internal:memory_size",
-  "//parlaylib/include/parlay/internal:block_allocator"
+  "//parlay/internal:concurrent_stack",
+  "//parlay/internal:memory_size",
+  "//parlay/internal:block_allocator"
   ],
 )
 
@@ -23,7 +23,7 @@ cc_library(
     ":sequence",
     ":slice",
     ":utilities",
-    "//parlaylib/include/parlay/internal:sequence_ops"
+    "//parlay/internal:sequence_ops"
   ],
 )
 
@@ -34,7 +34,7 @@ cc_library(
     ":primitives",
     ":sequence",
     ":slice",
-    "//parlaylib/include/parlay/internal:file_map"
+    "//parlay/internal:file_map"
   ],
 )
 
@@ -62,12 +62,12 @@ cc_library(
     ":sequence",
     ":slice",
     ":utilities",
-    "//parlaylib/include/parlay/internal:collect_reduce",
-    "//parlaylib/include/parlay/internal:integer_sort",
-    "//parlaylib/include/parlay/internal:merge",
-    "//parlaylib/include/parlay/internal:merge_sort",
-    "//parlaylib/include/parlay/internal:sequence_ops",
-    "//parlaylib/include/parlay/internal:sample_sort",
+    "//parlay/internal:collect_reduce",
+    "//parlay/internal:integer_sort",
+    "//parlay/internal:merge",
+    "//parlay/internal:merge_sort",
+    "//parlay/internal:sequence_ops",
+    "//parlay/internal:sample_sort",
   ],
 )
 
@@ -81,7 +81,7 @@ cc_library(
     ":sequence",
     ":slice",
     ":utilities",
-    "//parlaylib/include/parlay/internal:counting_sort",
+    "//parlay/internal:counting_sort",
   ],
 )
 
@@ -94,7 +94,7 @@ cc_library(
   name = "scheduler",
   hdrs = ["scheduler.h"],
   deps = [
-    "//parlaylib/include/parlay/internal:work_stealing_job"
+    "//parlay/internal:work_stealing_job"
   ],
 )
 
@@ -108,8 +108,8 @@ cc_library(
     ":slice",
     ":type_traits",
     ":utilities",
-    "//parlaylib/include/parlay/internal:debug_uninitialized",
-    "//parlaylib/include/parlay/internal:sequence_base",
+    "//parlay/internal:debug_uninitialized",
+    "//parlay/internal:sequence_base",
   ],
 )
 
@@ -132,7 +132,7 @@ cc_library(
   deps = [
     ":parallel",
     ":type_traits",
-    "//parlaylib/include/parlay/internal:debug_uninitialized"
+    "//parlay/internal:debug_uninitialized"
   ],
 )
 
