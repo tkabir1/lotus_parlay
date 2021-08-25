@@ -14,6 +14,22 @@ cc_library(
 )
 
 cc_library(
+  name = "block_delayed",
+  hdrs = ["block_delayed.h"],
+  deps = [
+    ":get_time",
+    ":sequence_ops",
+    ":stream_delayed",
+    "//parlay:delayed_sequence",
+    "//parlay:monoid",
+    "//parlay:parallel",
+    "//parlay:sequence",
+    "//parlay:slice",
+    "//parlay:utilities",
+  ],
+)
+
+cc_library(
   name = "bucket_sort",
   hdrs = ["bucket_sort.h"],
   deps = [
@@ -59,6 +75,35 @@ cc_library(
     "//parlay/internal/posix:file_map_impl_posix",
     "//parlay/internal/windows:file_map_impl_windows",
   ],
+)
+
+cc_library(
+  name = "get_time",
+  hdrs = ["get_time.h"],
+  deps = [],
+)
+
+cc_library(
+  name = "group_by",
+  hdrs = ["group_by.h"],
+  deps = [
+    ":block_delayed",
+    ":collect_reduce",
+    ":counting_sort",
+    "//parlay:monoid",
+    "//parlay:parallel",
+    "//parlay:primitives",
+    "//parlay:range",
+    "//parlay:sequence",
+    "//parlay:slice",
+    "//parlay:utilities",
+  ],
+)
+
+cc_library(
+  name = "headered_block",
+  hdrs = ["headered_block.h"],
+  deps = [],
 )
 
 cc_library(
@@ -140,6 +185,16 @@ cc_library(
     "//parlay:delayed_sequence",
     "//parlay:monoid",
     "//parlay:range",
+    "//parlay:sequence",
+    "//parlay:utilities",
+  ],
+)
+
+cc_library(
+  name = "stream_delayed",
+  hdrs = ["stream_delayed.h"],
+  deps = [
+    ":uninitialized_sequence",
     "//parlay:sequence",
     "//parlay:utilities",
   ],
