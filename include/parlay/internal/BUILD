@@ -41,6 +41,7 @@ cc_library(
   name = "collect_reduce",
   hdrs = ["collect_reduce.h"],
   deps = [
+    ":get_time",
     "//parlay:utilities",
   ],
 )
@@ -57,6 +58,7 @@ cc_library(
   name = "counting_sort",
   hdrs = ["counting_sort.h"],
   deps = [
+    ":get_time",
     ":sequence_ops",
     ":transpose",
     "//parlay:utilities",
@@ -92,7 +94,6 @@ cc_library(
     ":counting_sort",
     "//parlay:monoid",
     "//parlay:parallel",
-    "//parlay:primitives",
     "//parlay:range",
     "//parlay:sequence",
     "//parlay:slice",
@@ -110,6 +111,7 @@ cc_library(
   name = "integer_sort",
   hdrs = ["integer_sort.h"],
   deps = [
+    ":get_time",
     ":counting_sort",
     ":sequence_ops",
     ":quicksort",
