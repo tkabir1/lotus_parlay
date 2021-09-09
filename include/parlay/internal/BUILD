@@ -1,3 +1,5 @@
+licenses(["notice"])
+
 cc_library(
   name = "binary_search",
   hdrs = ["binary_search.h"],
