@@ -66,10 +66,6 @@ struct forward_delayed_sequence {
       : begin_(iterator(ii, n)) {}
 };
 
-#if !defined(__GNUC__)
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wunused-local-typedef"
-#endif
 template <typename Seq1, typename Seq2, typename F>
 auto zip_with(Seq1 &S1, Seq2 &S2, F f) {
   struct iter {
@@ -99,9 +95,6 @@ auto zip_with(Seq1 &S1, Seq2 &S2, F f) {
   };
   return forward_delayed_sequence(iter(f, S1.begin(),S2.begin()), S1.end()-S1.begin());
 }
-#if !defined(__GNUC__)
-#pragma clang diagnostic pop
-#endif
 
 template <typename Seq1, typename Seq2>
 auto zip(Seq1 &S1, Seq2 &S2) {
